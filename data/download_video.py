@@ -2,7 +2,7 @@ import jsonlines
 import re
 import os, glob
 
-url_format = 'https://www.youtube.com/embed/{youtube_id}?start={start_time}&end={end_time}&version=3'
+url_format = 'https://www.youtube.com/embed/{}?start={}&end={}&version=3'
 reObj = re.compile(r'(.*)_(\d+\.0)_(\d+\.0)')
 
 for filename in glob.glob('highlight_*_release.jsonl'):
