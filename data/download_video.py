@@ -20,9 +20,7 @@ with open('download.sh', mode="w", encoding="utf-8") as f_sh:
                 
                 url = url_format.format(youtube_id, start_time, end_time)
     
-                cmd = 'yt_dlp -f best -f mp4 "{}" -o "{}"'.format(url, save_dir + 'v_' + youtube_id + '.mp4')
+                cmd = 'yt-dlp -f best -f mp4 "{}" -o "{}"'.format(url, save_dir + 'v_' + youtube_id + '.mp4')
                 
                 f_sh.write(cmd + '\n')
                 
-                # print(cmd)
-                # print(os.system(cmd))
