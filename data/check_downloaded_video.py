@@ -25,20 +25,21 @@ for filename in glob.glob('highlight_*_release.jsonl'):
 
 
 for s in s_list:
-    print('{}_video_ids', s, len(ids[s]))
+    print('{}_video_ids: {}'.format(s, len(ids[s])))
 
 # print(ids['train'][0])
 
-all_video_ids = set(ids['train'].union(ids['val']).union(ids['test']))
+all_video_ids = list(set(ids['train'].union(ids['val']).union(ids['test'])))
 print("all_video_ids", len(all_video_ids))
 
+print('all_video_ids[0]:', all_video_ids[0])
 
 video_ids = []
 
-for i, path in enumerate(glob.glob(video_dir + '*')):
+for i, path in enumerate(glob.glob(video_dir + '*/*')):
     video_ids.append(path.split('/')[-1][2:-4])
 
-
+print('video_ids[0]:', video_ids[0])
 video_ids = set(video_ids)
 
 result = {
